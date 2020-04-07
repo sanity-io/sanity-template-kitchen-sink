@@ -1,0 +1,78 @@
+{
+  "version": 0,
+  "title": "Kitchen Sink",
+  "description": "A collection of examples from Sanity.io product demo.",
+  "previewMedia": {
+    "type": "image",
+    "src": "assets/frontend.png",
+    "alt": "A screenshot of the example Gatsby frontend"
+  },
+  "technologies": [
+    {
+      "id": "gatsby",
+      "name": "Gatsby",
+      "url": "https://www.gatsbyjs.org/"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "url": "https://www.netlify.com/"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "studio",
+      "type": "studio",
+      "title": "Sanity Studio",
+      "description": "The Sanity Studio is where you edit and structure your content.",
+      "dir": "./studio",
+      "provider": {
+        "name": "netlify",
+        "config": {
+          "base": "/",
+          "dir": "/studio/dist",
+          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist"
+        },
+        "requirements": ["build-hook"]
+      },
+      "previewMedia": {
+        "type": "image",
+        "src": "assets/studio.png",
+        "alt": "A preview image of the Sanity Studio."
+      }
+    },
+    {
+      "id": "web",
+      "type": "web",
+      "title": "Blog Website",
+      "description": "A simple frontend showcasing page building and a blog.",
+      "dir": "./web",
+      "requiredTokens": [
+        {
+          "role": "deploy-studio",
+          "label": "GraphQL API Deployer"
+        }
+      ],
+      "provider": {
+        "name": "netlify",
+        "config": {
+          "base": "/",
+          "dir": "/web/public",
+          "cmd": "npm run build-web"
+        },
+        "requirements": ["build-hook"]
+      },
+      "previewMedia": {
+        "type": "image",
+        "src": "assets/frontend.png",
+        "alt": "A preview image of the frontend"
+      },
+      "requiredCorsOrigins": [
+        {
+          "origin": "http://localhost:8000",
+          "allowCredentials": false
+        }
+      ]
+    }
+  ]
+}

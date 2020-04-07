@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "sanity-kitchen-sink",
+  "scripts": {
+    "netlify:build-studio": "npm run build && cd build && npm install && npm run build-studio && cp studio/netlify.toml studio/dist",
+    "netlify:build-web": "npm run build && cd build && npm install && npm run build-web",
+    "build": "sanity-template build --template-values dev/template-values-production.json",
+    "copy-node-modules": "npm run copy-studio-node-modules && npm run copy-web-node-modules",
+    "copy-studio-node-modules": "cp -R build/studio/node_modules template/studio/node_modules",
+    "copy-web-node-modules": "cp -R build/web/node_modules template/web/node_modules",
+    "dev": "sanity-template watch --template-values dev/template-values-development.json",
+    "export": "cd build/studio && sanity dataset export blog ../../data/production.tar.gz",
+    "lint-build": "npm run build && (cd build && npm install && npm run lint)",
+    "test": "npm run build && cd build && npm install && npm run build"
+  },
+  "devDependencies": {
+    "husky": "^3.0.1",
+    "sanity-template": "^1.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "([ -z \"$SKIP_HOOK\" ] && sanity-template lockfiles && git add '*package-lock.json*' && git diff --quiet && SKIP_HOOK=1 git commit -m 'Generate lockfiles') && echo 'Committed lockfiles' || echo ''"
+    }
+  }
+}

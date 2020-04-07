@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+blockquote {
+  font-family: monospace;
+  margin: 2em;
+}
+
+ol,
+ul {
+  margin: 1.2em;
+}
+
+ol {
+  list-style: decimal;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+  color: cornflowerblue;
+}
+
+ul {
+  list-style: circle;
+}
+
+h3 {
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 900;
+}
+
+*/

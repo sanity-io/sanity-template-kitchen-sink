@@ -1,0 +1,36 @@
+{
+  "repository": {
+    "name": "sanity-gatsby-blog",
+    "owner": "sanity-io",
+    "private": false
+  },
+  "sanity": {
+    "dataset": "blog",
+    "projectId": "jmhf2rn8",
+    "projectTitle": "Gatsby Blog (dev)"
+  },
+  "user": {
+    "profileImage": "https://lh3.googleusercontent.com/-a67P3TV8b5g/AAAAAAAAAAI/AAAAAAAAADI/LGBX1ZAjh88/photo.jpg",
+    "displayName": "Marius Lundgård",
+    "email": "marius@sanity.io"
+  },
+  "userInput": {},
+  "deployments": {
+    "studio": {
+      "url": "https://sanity-gatsby-blog-studio-rf4qpk9y.netlify.com/",
+      "providerName": "netlify",
+      "providerInfo": {
+        "buildHookId": "5cc04d5199df1802277a6e91",
+        "siteId": "58275684-e35f-46ee-9fda-a5151927cfb5        "
+      }
+    },
+    "web": {
+      "url": "https://sanity-gatsby-blog-web-skupqnos.netlify.com/",
+      "providerName": "netlify",
+      "providerInfo": {
+        "buildHookId": "5caf2962008b0b042f8df19a",
+        "siteId": "b8bd695c-8c8c-4e22-a34f-a6ee0103d454"
+      }
+    }
+  }
+}
