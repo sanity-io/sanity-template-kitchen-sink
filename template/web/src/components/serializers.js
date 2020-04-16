@@ -4,17 +4,24 @@ import ReactPlayer from "react-player";
 import InstagramEmbed from "react-instagram-embed";
 import LatexRenderer from "./Latex";
 
+const AuthorReference = ({ node }) => {
+  if (node && node.author && node.author.name) {
+    return <span>{node.author.name}</span>;
+  }
+  return <></>;
+};
+
 const serializers = {
   types: {
-    authorReference: ({ node }) => <span>{node.author.name}</span>,
+    authorReference: AuthorReference,
     mainImage: Figure,
     videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
     instagram: ({ node }) => {
       if (!node.url) return null;
       return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
     },
-    math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />
-  }
+    math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
+  },
 };
 
 export default serializers;
