@@ -1,31 +1,12 @@
 import { format } from "date-fns";
 import React from "react";
-import Img from "gatsby-image";
-import { buildImageObj } from "../lib/helpers";
-import { imageUrlFor } from "../lib/image-url";
+import MainImage from "./MainImage";
 import PortableText from "./portableText";
-
-import { getFluidGatsbyImage } from "gatsby-source-sanity";
-import clientConfig from "../../client-config";
 
 import styles from "./blog-post.module.css";
 
-const BlogPost = props => {
-  const { _rawBody, _rawExcerpt, authors, categories, title, mainImage, publishedAt } = props;
-  const imgUrl =
-    mainImage &&
-    imageUrlFor(buildImageObj(mainImage))
-      .width(1200)
-      .height(Math.floor((9 / 16) * 1200))
-      .fit("crop")
-      .auto("format")
-      .url();
-
-  const mainImageFluid = getFluidGatsbyImage(
-    mainImage.asset,
-    { maxWidth: 1200 },
-    clientConfig.sanity
-  );
+const BlogPost = (props) => {
+  const { _rawBody, _rawExcerpt, title, mainImage, publishedAt } = props;
 
   return (
     <div className={styles.mainContent}>
@@ -38,13 +19,13 @@ const BlogPost = props => {
       </div>
 
       <div className="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded">
-        {imgUrl && <img src={imgUrl} alt={mainImage.alt} />}
+        <MainImage mainImage={mainImage} width={1200} />
         <div className="container max-w-5xl mx-auto -mt-2">
           <div className="mx-0 sm:mx-6">
             <div
               className="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal"
               style={{
-                fontFamily: "Georgia,serif"
+                fontFamily: "Georgia,serif",
               }}
             >
               <div className="text-2xl md:text-3xl mb-5">
