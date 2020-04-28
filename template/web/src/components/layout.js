@@ -7,7 +7,7 @@ class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrolled: false
+      scrolled: false,
     };
   }
 
@@ -36,7 +36,7 @@ class Layout extends React.Component {
       showNav,
       siteTitle,
       navMenuItems,
-      textWhite = true
+      textWhite = true,
     } = this.props;
     const { scrolled } = this.state;
     return (
