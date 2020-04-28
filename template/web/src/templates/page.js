@@ -52,7 +52,7 @@ export const query = graphql`
   }
 `;
 
-const Page = props => {
+const Page = (props) => {
   const { data, errors } = props;
 
   if (errors) {
@@ -93,7 +93,7 @@ const Page = props => {
   const page = testPage || data.route.page;
 
   const content = (page._rawContent || [])
-    .filter(c => !c.disabled)
+    .filter((c) => !c.disabled)
     .map((c, i) => {
       let el = null;
       switch (c._type) {
@@ -132,20 +132,20 @@ const Page = props => {
 
   const gradient = {
     from: (site.primaryColor && site.primaryColor.hex) || "#d53369",
-    to: (site.secondaryColor && site.secondaryColor.hex) || "#daae51"
+    to: (site.secondaryColor && site.secondaryColor.hex) || "#daae51",
   };
 
   const menuItems = page.navMenu && (page.navMenu.items || []);
   const pageTitle = !data.route.useSiteTitle && page.title;
 
   return (
-    <Layout navMenuItems={menuItems}>
+    <Layout navMenuItems={menuItems} textWhite={true}>
       <SEO
         title={pageTitle}
         description={site.description}
         keywords={site.keywords}
         bodyAttr={{
-          class: "leading-normal tracking-normal text-white gradient"
+          class: "leading-normal tracking-normal text-white gradient",
         }}
         gradient={gradient}
       />
