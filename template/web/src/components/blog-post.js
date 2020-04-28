@@ -1,45 +1,60 @@
-import { format } from "date-fns";
-import React from "react";
-import MainImage from "./MainImage";
-import PortableText from "./portableText";
+import {format, distanceInWords, differenceInDays} from 'date-fns'
+import React from 'react'
+import {buildImageObj} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
+import PortableText from './portableText'
+import Container from './container'
+import AuthorList from './author-list'
 
-import styles from "./blog-post.module.css";
+import styles from './blog-post.module.css'
 
-const BlogPost = (props) => {
-  const { _rawBody, _rawExcerpt, title, mainImage, publishedAt } = props;
-
+function BlogPost (props) {
+  const {_rawBody, authors, categories, title, mainImage, publishedAt} = props
   return (
-    <div className={styles.mainContent}>
-      <div className="text-center pt-16 md:pt-32">
-        <p className="text-sm md:text-base text-teal-500 font-bold">
-          {format(publishedAt, "DD MMMM YYYY").toUpperCase()}
-          {/*<span className="text-gray-900">/</span> GETTING STARTED*/}
-        </p>
-        <h1 className="font-bold break-normal text-3xl md:text-5xl">{title}</h1>
-      </div>
-
-      <div className="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded">
-        <MainImage mainImage={mainImage} width={1200} />
-        <div className="container max-w-5xl mx-auto -mt-2">
-          <div className="mx-0 sm:mx-6">
-            <div
-              className="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal"
-              style={{
-                fontFamily: "Georgia,serif",
-              }}
-            >
-              <div className="text-2xl md:text-3xl mb-5">
-                <PortableText blocks={_rawExcerpt} />
-              </div>
-              <div className="py-6">
-                <PortableText blocks={_rawBody} />
-              </div>
-            </div>
-          </div>
+    <article className={styles.root}>
+      {mainImage && mainImage.asset && (
+        <div className={styles.mainImage}>
+          <img
+            src={imageUrlFor(buildImageObj(mainImage))
+              .width(1200)
+              .height(Math.floor((9 / 16) * 1200))
+              .fit('crop')
+              .auto('format')
+              .url()}
+            alt={mainImage.alt}
+          />
         </div>
-      </div>
-    </div>
-  );
-};
+      )}
+      <Container>
+        <div className={styles.grid}>
+          <div className={styles.mainContent}>
+            <h1 className={styles.title}>{title}</h1>
+            {_rawBody && <PortableText blocks={_rawBody} />}
+          </div>
+          <aside className={styles.metaContent}>
+            {publishedAt && (
+              <div className={styles.publishedAt}>
+                {differenceInDays(new Date(publishedAt), new Date()) > 3
+                  ? distanceInWords(new Date(publishedAt), new Date())
+                  : format(new Date(publishedAt), 'MMMM Do, YYYY')}
+              </div>
+            )}
+            {authors && <AuthorList items={authors} title='Authors' />}
+            {categories && (
+              <div className={styles.categories}>
+                <h3 className={styles.categoriesHeadline}>Categories</h3>
+                <ul>
+                  {categories.map(category => (
+                    <li key={category._id}>{category.title}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </aside>
+        </div>
+      </Container>
+    </article>
+  )
+}
 
-export default BlogPost;
+export default BlogPost
