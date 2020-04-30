@@ -13,10 +13,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       fields: {
         isPublished: {
           type: "Boolean!",
-          resolve: source => new Date(source.publishedAt) <= new Date()
-        }
-      }
-    })
+          resolve: (source) => new Date(source.publishedAt) <= new Date(),
+        },
+      },
+    }),
   ]);
 };
 
@@ -40,15 +40,14 @@ async function createLandingPages(pathPrefix = "/", graphql, actions, reporter) 
   if (result.errors) throw result.errors;
 
   const routeEdges = (result.data.allSanityRoute || {}).edges || [];
-  routeEdges.forEach(edge => {
+  routeEdges.forEach((edge) => {
     const { id, slug = {} } = edge.node;
-    const path =
-      slug.current === "frontpage" ? pathPrefix : [pathPrefix, slug.current, "/"].join("");
+    const path = [pathPrefix, slug.current, "/"].join("");
     reporter.info(`Creating landing page: ${path}`);
     createPage({
       path,
       component: require.resolve("./src/templates/page.js"),
-      context: { id }
+      context: { id },
     });
   });
 }
@@ -75,15 +74,15 @@ async function createBlogPostPages(pathPrefix = "/blog", graphql, actions, repor
 
   const postEdges = (result.data.allSanityPost || {}).edges || [];
   postEdges
-    .filter(edge => !isFuture(edge.node.publishedAt))
-    .forEach(edge => {
+    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .forEach((edge) => {
       const { id, slug = {} } = edge.node;
       const path = `${pathPrefix}/${slug.current}/`;
       reporter.info(`Creating blog post page: ${path}`);
       createPage({
         path,
         component: require.resolve("./src/templates/blog-post.js"),
-        context: { id }
+        context: { id },
       });
     });
 }

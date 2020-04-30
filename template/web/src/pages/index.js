@@ -35,17 +35,11 @@ export const query = graphql`
     }
   }
 
-  query IndexPageQuery {
-    route: sanityRoute(slug: { current: { eq: "frontpage" } }) {
-      id
-      slug {
-        current
-      }
-      useSiteTitle
-      page {
-        ...PageInfo
-      }
+  query FrontpageQuery {
+    page: sanityPage(_id: { regex: "/(drafts.|)frontpage/" }) {
+      ...PageInfo
     }
+
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       primaryColor {
         hex
@@ -65,7 +59,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = props => {
+const IndexPage = (props) => {
   const { data, errors } = props;
 
   if (errors) {

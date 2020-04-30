@@ -71,26 +71,7 @@ const Page = (props) => {
     );
   }
 
-  // Runtime A/B test variant pick. If we are at build time,
-  // use the statically referenced 'page' property
-  const [testPage, setPage] = useState(null);
-
-  if (
-    !testPage &&
-    typeof window !== "undefined" &&
-    data.route.experiment &&
-    data.route.experiment.active === true &&
-    data.route.experiment.variations &&
-    data.route.experiment.variations.length > 1
-  ) {
-    // TODO: This choice should be preserved in localStorage
-    // so the user always sees the same variant
-    const variations = data.route.experiment.variations;
-    const pick = variations[Math.floor(Math.random() * variations.length)].page;
-    setPage(pick);
-  }
-
-  const page = testPage || data.route.page;
+  const page = data.page || data.route.page;
 
   const content = (page._rawContent || [])
     .filter((c) => !c.disabled)
@@ -136,7 +117,7 @@ const Page = (props) => {
   };
 
   const menuItems = page.navMenu && (page.navMenu.items || []);
-  const pageTitle = !data.route.useSiteTitle && page.title;
+  const pageTitle = data.route && !data.route.useSiteTitle && page.title;
 
   return (
     <Layout navMenuItems={menuItems} textWhite={true}>
