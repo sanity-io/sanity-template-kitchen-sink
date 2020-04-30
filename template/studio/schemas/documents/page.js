@@ -1,5 +1,3 @@
-import * as plugs from '../plugs'
-
 export default {
   type: 'document',
   name: 'page',
@@ -7,7 +5,7 @@ export default {
   fields: [
     {
       type: 'string',
-      name: 'title'
+      name: 'title',
     },
     {
       title: 'Navigation menu',
@@ -15,7 +13,7 @@ export default {
       type: 'reference',
       weak: false,
       to: [{ type: 'navigationMenu' }],
-      description: 'Which nav menu should be shown, if any'
+      description: 'Which nav menu should be shown, if any',
     },
     {
       name: 'content',
@@ -26,8 +24,8 @@ export default {
         { type: 'hero' },
         { type: 'infoRows' },
         { type: 'ctaColumns' },
-        { type: 'ctaPlug' }
-      ]
-    }
-  ]
+        { type: 'ctaPlug' },
+      ],
+    },
+  ],
 }

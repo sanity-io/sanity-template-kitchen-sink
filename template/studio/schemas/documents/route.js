@@ -8,8 +8,8 @@ export default {
   fieldsets: [
     {
       title: 'Visibility',
-      name: 'visibility'
-    }
+      name: 'visibility',
+    },
   ],
   fields: [
     {
@@ -18,15 +18,22 @@ export default {
       description: 'The page you want to appear at this path. Remember it needs to be published.',
       to: [
         {
-          type: 'page'
-        }
-      ]
+          type: 'page',
+        },
+      ],
     },
     {
       name: 'slug',
       type: 'slug',
-      description: 'This is the path we will render the page at.',
-      title: 'Path'
+      description: 'This is the website path the page will accessible on',
+      title: 'Path',
+      validation: (Rule) =>
+        Rule.required().custom((slug) => {
+          if (slug && slug.current && slug.current === '/') {
+            return 'Cannot be /'
+          }
+          return true
+        }),
     },
     /*
     {
@@ -51,20 +58,22 @@ export default {
       description:
         'Use the site settings title as page title instead of the title on the referenced page',
       name: 'useSiteTitle',
-      type: 'boolean'
+      type: 'boolean',
     },
+    /*
     {
       title: 'Open graph',
       name: 'openGraph',
       description: 'These values populate meta tags',
-      type: 'openGraph'
+      type: 'openGraph',
     },
+    */
+    /*
     {
       name: 'experiment',
       type: 'experiment',
-      description: 'Use this to A/B/n test this route towards different pages'
-    }
-    /*
+      description: 'Use this to A/B/n test this route towards different pages',
+    },
     {
       title: 'Include in sitemap',
       description: 'For search engines. Will be generateed to /sitemap.xml',
@@ -82,22 +91,18 @@ export default {
     */
   ],
   initialValue: {
-    useSiteTitle: false
+    useSiteTitle: false,
   },
   preview: {
     select: {
-      title: 'openGraph.title',
-      subtitle: 'slug.current',
-      variations: 'experiment.variations'
+      title: 'slug.current',
+      subtitle: 'page.title',
     },
-    prepare({ title, subtitle, variations }) {
+    prepare({ title, subtitle }) {
       return {
-        title,
-        subtitle:
-          variations && variations.length
-            ? `/${subtitle} (${variations.length} experiments)`
-            : `/${subtitle}`
+        title: ['/', title].join(''),
+        subtitle,
       }
-    }
-  }
+    },
+  },
 }
