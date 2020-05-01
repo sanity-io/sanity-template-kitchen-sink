@@ -19,16 +19,6 @@ export const query = graphql`
         current
       }
       useSiteTitle
-      experiment {
-        variations {
-          page {
-            ...PageInfo
-          }
-          variationId
-          percentage
-        }
-        active
-      }
       page {
         ...PageInfo
       }
