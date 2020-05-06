@@ -5,6 +5,9 @@ export default {
   type: 'document',
   title: 'Landing page routes',
   icon: MdLink,
+  initialValue: {
+    useSiteTitle: false,
+  },
   fieldsets: [
     {
       title: 'Visibility',
@@ -35,24 +38,6 @@ export default {
           return true
         }),
     },
-    /*
-    {
-      name: 'queries',
-      type: 'array',
-      description: 'Search queries to match',
-      of: [
-        {
-          type: 'string'
-        }
-      ]
-    },
-    {
-      name: 'campaign',
-      type: 'string',
-      title: 'Campaign',
-      description: 'UTM for campaings'
-    },
-    */
     {
       title: 'Use site title?',
       description:
@@ -60,19 +45,11 @@ export default {
       name: 'useSiteTitle',
       type: 'boolean',
     },
-    /*
     {
       title: 'Open graph',
       name: 'openGraph',
       description: 'These values populate meta tags',
       type: 'openGraph',
-    },
-    */
-    /*
-    {
-      name: 'experiment',
-      type: 'experiment',
-      description: 'Use this to A/B/n test this route towards different pages',
     },
     {
       title: 'Include in sitemap',
@@ -87,12 +64,33 @@ export default {
       name: 'disallowRobots',
       type: 'boolean',
       fieldset: 'visibility'
-    }
-    */
+    },
+    {
+      name: 'queries',
+      type: 'array',
+      description: 'Search queries to match',
+      of: [
+        {
+          type: 'string'
+        }
+      ],
+      options: {
+        layout: 'tags'
+      }
+    },
+    {
+      name: 'campaign',
+      type: 'string',
+      title: 'Campaign',
+      description: 'UTM for campaings'
+    },
+
+    {
+      name: 'experiment',
+      type: 'experiment',
+      description: 'Use this to A/B/n test this route towards different pages',
+    },
   ],
-  initialValue: {
-    useSiteTitle: false,
-  },
   preview: {
     select: {
       title: 'slug.current',
