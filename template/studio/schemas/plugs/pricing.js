@@ -9,7 +9,7 @@ export default {
     {
       type: 'boolean',
       name: 'transparentCTAs',
-      title: 'Disable background color'
+      title: 'Enable gradient background'
     }
   ],
   preview: {
