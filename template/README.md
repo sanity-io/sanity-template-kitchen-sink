@@ -1,8 +1,10 @@
 # The Kitchen Sink Studio
 
-A “[kitchen sink](https://stackoverflow.com/questions/33779296/what-is-exact-meaning-of-kitchen-sink-in-programming)” is a showcase of APIs and functionality. This is the example project that we at Sanity HQ for demos. Hence, it will change and evolve over time with new feature releases.
+A “[kitchen sink](https://stackoverflow.com/questions/33779296/what-is-exact-meaning-of-kitchen-sink-in-programming)” is a showcase of APIs and functionality. This is the example project that we at Sanity HQ use for demos. Hence, it will change and evolve over time with new feature releases.
 
 This starter is great for demo purposes, either to evaluate Sanity for your own use, or when you want to offer it as part of a project for your clients.
+
+Because this starter is used for demo purposes, you will find that not all fields in the Studio has been wired up to the example frontend. This is not intented for use in production.
 
 You can bootstrap a new project from this template by following this link to [sanity.io/create](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-kitchen-sink).
 
