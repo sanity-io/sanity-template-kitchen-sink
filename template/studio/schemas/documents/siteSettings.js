@@ -17,11 +17,15 @@ export default {
     },
     {
       type: 'color',
-      name: 'primaryColor'
+      name: 'primaryColor',
+      title: 'Primary brand color',
+      description: 'Used to generate the primary accent color for websites, press materials, etc'
     },
     {
       type: 'color',
-      name: 'secondaryColor'
+      name: 'secondaryColor',
+      title: 'Secondary brand color',
+      description: 'Used to generate the secondary accent color for websites, press materials, etc'
     }
   ]
 }
