@@ -1,3 +1,13 @@
+/*
+ * Enable Document Actions by adding this config to the sanity.json parts array:
+ {
+    "implements": "part:@sanity/dashboard/config",
+    "path": "dashboardConfig.js"
+  },
+
+  Learn more: https://www.sanity.io/docs/custom-workflows
+*/
+
 // import the default document actions
 import React, { useMemo } from 'react'
 import defaultResolve, {
@@ -35,7 +45,6 @@ const filteredDefaultActions = props => {
 }
 
 export default function resolveDocumentActions(props) {
-  console.log('resolveDocumentActions()', props.id)
   let actions
   if (props.type === 'post') {
     actions = [
