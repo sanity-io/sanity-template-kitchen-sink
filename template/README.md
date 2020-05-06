@@ -1,6 +1,6 @@
 # The Kitchen Sink Studio
 
-A “[kitchen sink](https://stackoverflow.com/questions/33779296/what-is-exact-meaning-of-kitchen-sink-in-programming)” is a showcase of APIs and functionality. This is the example project that we at Sanity HQ use to demonstrate how you can use the Sanity platform. Hence, it will change and evolve over time with new feature releases.
+A “[kitchen sink](https://stackoverflow.com/questions/33779296/what-is-exact-meaning-of-kitchen-sink-in-programming)” is a showcase of APIs and functionality. This is the example project that we at Sanity HQ for demos. Hence, it will change and evolve over time with new feature releases.
 
 This starter is great for demo purposes, either to evaluate Sanity for your own use, or when you want to offer it as part of a project for your clients.
 
@@ -11,11 +11,18 @@ You can bootstrap a new project from this template by following this link to [sa
 Concepts covered in this starter are:
 
 - How to use the Studio‘s page builder to create landing pages, and present them in a web frontend
-- Edit blog posts with side-by-side web-previews, can be configured to [Gatsby Preview](https://www.gatsbyjs.com/) for real-time previewing
-  – How to manage SEO metadata like fields for Open Graph meta-tags
-  – How to set up navigation for structured content, which allows for proper decoupling and omni-channel
+- Edit blog posts with side-by-side web-previews, can be configured to [Gatsby Preview](https://www.gatsbyjs.com/) for real-time previewing in production and not just local development
+- How to manage SEO metadata like fields for Open Graph meta-tags
+- How to set up navigation for structured content, which allows for proper decoupling and omni-channel
 - Custom embedded objects in rich text for Instagram posts, social media videos, LaTeX math etc.
-- Simple example of [Google Optimize](https://optimize.google.com/optimize/home/) A/B-test facility
+- [Field validations](https://www.sanity.io/docs/validation)
+- Custom [slugify functions with promises](https://www.sanity.io/docs/slug-type#custom-slugify-function-e1531d9d041b)
+- Examples of custom document and document type lists using [structure builder](https://www.sanity.io/docs/overview-structure-builder)
+- Example of [Google Optimize](https://optimize.google.com/optimize/home/) A/B-test facility
+- Custom workflow using [Document Actions API]('https://www.sanity.io/docs/custom-workflows)
+- …and more
+
+Technologies:
 
 - A blazing frontend of landing pages and a blog with [Gatsby.js](https://gatsbyjs.org)
 - Structured content using [Sanity.io](https://www.sanity.io)
