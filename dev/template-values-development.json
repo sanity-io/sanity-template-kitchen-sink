@@ -5,9 +5,9 @@
     "private": false
   },
   "sanity": {
-    "dataset": "master",
-    "projectId": "rwmuledy",
-    "projectTitle": "Kitchen"
+    "dataset": "kitchensink",
+    "projectId": "jmhf2rn8",
+    "projectTitle": "Kitchen Sink Studio"
   },
   "user": {
     "profileImage": "https://lh3.googleusercontent.com/a-/AOh14GhJCeBX3cTHXh01wgVDHIp91NbnD5Ob0r9CZYCt",
