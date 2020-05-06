@@ -1,19 +1,21 @@
-# Sanity Demo
+# The Kitchen Sink Studio
 
-This is an example project we use to demonstrate how you can use the Sanity platform.
+A “[kitchen sink](https://stackoverflow.com/questions/33779296/what-is-exact-meaning-of-kitchen-sink-in-programming)” is a showcase of APIs and functionality. This is the example project that we at Sanity HQ use to demonstrate how you can use the Sanity platform. Hence, it will change and evolve over time with new feature releases.
+
+This starter is great for demo purposes, either to evaluate Sanity for your own use, or when you want to offer it as part of a project for your clients.
 
 You can bootstrap a new project from this template by following this link to [sanity.io/create](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-kitchen-sink).
 
 ## What you have
 
-This is a demo example of a customized Sanity Studio. It is indented to be a sort of kitchen sink, a grab bag of many different examples and usages. All of them might not even necessarily make sense to have in a single Sanity Studio, but showing off different concepts and customizations is the goal here. Expect this template to expand and change a lot.
+Concepts covered in this starter are:
 
-Some concepts covered in this template are
-
-- Create landing pages and do page building on them for a web frontend
-- A simple blog with web preview right in the Studio
+- How to use the Studio‘s page builder to create landing pages, and present them in a web frontend
+- Edit blog posts with side-by-side web-previews, can be configured to [Gatsby Preview](https://www.gatsbyjs.com/) for real-time previewing
+  – How to manage SEO metadata like fields for Open Graph meta-tags
+  – How to set up navigation for structured content, which allows for proper decoupling and omni-channel
 - Custom embedded objects in rich text for Instagram posts, social media videos, LaTeX math etc.
-- Simple example of Google Optimize A/B test facility
+- Simple example of [Google Optimize](https://optimize.google.com/optimize/home/) A/B-test facility
 
 - A blazing frontend of landing pages and a blog with [Gatsby.js](https://gatsbyjs.org)
 - Structured content using [Sanity.io](https://www.sanity.io)
