@@ -15,6 +15,7 @@ export default {
     {
       name: 'page',
       type: 'reference',
+      validation: (Rule) => Rule.required(),
       description: 'The page you want to appear at this path. Remember it needs to be published.',
       to: [
         {
