@@ -20,6 +20,7 @@ Concepts covered in this starter are:
 - Examples of custom document and document type lists using [structure builder](https://www.sanity.io/docs/overview-structure-builder)
 - Example of [Google Optimize](https://optimize.google.com/optimize/home/) A/B-test facility
 - Custom workflow using [Document Actions API]('https://www.sanity.io/docs/custom-workflows)
+- Custom asset sources for Unsplash and AI-generated person photos
 - …and more
 
 Technologies:
