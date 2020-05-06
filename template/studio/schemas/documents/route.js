@@ -82,7 +82,7 @@ export default {
     {
       name: 'queries',
       type: 'array',
-      description: 'Search queries to match',
+      description: 'Used to return personalized content based on paid search terms and remarketing',
       of: [
         {
           type: 'string'
