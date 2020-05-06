@@ -43,6 +43,24 @@ const blog = S.listItem()
               )
           ),
         S.documentTypeListItem('post').title('All posts').icon(AllIcon),
+        S.listItem()
+          .title('Posts by category')
+          .child(
+            // List out all categories
+            S.documentTypeList('category')
+              .title('Posts by category')
+              .child(catId =>
+                // List out project documents where the _id for the selected
+                // category appear as a _ref in the project’s categories array
+                S.documentList()
+                  .schemaType('post')
+                  .title('Posts')
+                  .filter(
+                    '_type == "post" && $catId in categories[]._ref'
+                  )
+                  .params({ catId })
+              )
+        ),
         S.divider(),
         S.documentTypeListItem('author').title('Authors').icon(AuthorIcon),
         S.documentTypeListItem('category').title('Categories')
