@@ -1,11 +1,11 @@
 import React from 'react'
 
-const mathInlineIcon = () => (
-  <span>
-    a<span style={{ fontWeight: 'bold' }}>∑</span>b
-  </span>
-)
-const mathIcon = () => <span style={{ fontWeight: 'bold' }}>∑</span>
+import {
+  mathInlineIcon,
+  mathIcon,
+  highlightIcon,
+  highlightRender,
+} from '../components/PortableTextEditorComponents'
 
 export default {
   name: 'bodyPortableText',
@@ -37,7 +37,17 @@ export default {
         // preference or highlighting by editors.
         decorators: [
           { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' }
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Code', value: 'code' },
+          {
+            title: 'Highlight',
+            value: 'highlight',
+            blockEditor: {
+              icon: highlightIcon,
+              render: highlightRender
+            }
+          }
+
           /*
           {
             title: 'Math',

@@ -1,10 +1,22 @@
+import client from 'part:@sanity/base/client'
 import { MdLink } from 'react-icons/lib/md'
+
+function myAsyncSlugifier(input) {
+  const query = '*[_id == $id][0]'
+  const params = {id: input._ref}
+  return client.fetch(query, params).then(doc => {
+    return doc.title.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+  })
+}
 
 export default {
   name: 'route',
   type: 'document',
   title: 'Landing page routes',
   icon: MdLink,
+  initialValue: {
+    useSiteTitle: false,
+  },
   fieldsets: [
     {
       title: 'Visibility',
@@ -35,25 +47,12 @@ export default {
           }
           return true
         }),
+      options: {
+        source: 'page',
+        // Read more: https://www.sanity.io/docs/slug-type
+        slugify: myAsyncSlugifier
+      }
     },
-    /*
-    {
-      name: 'queries',
-      type: 'array',
-      description: 'Search queries to match',
-      of: [
-        {
-          type: 'string'
-        }
-      ]
-    },
-    {
-      name: 'campaign',
-      type: 'string',
-      title: 'Campaign',
-      description: 'UTM for campaings'
-    },
-    */
     {
       title: 'Use site title?',
       description:
@@ -61,19 +60,11 @@ export default {
       name: 'useSiteTitle',
       type: 'boolean',
     },
-    /*
     {
       title: 'Open graph',
       name: 'openGraph',
       description: 'These values populate meta tags',
       type: 'openGraph',
-    },
-    */
-    /*
-    {
-      name: 'experiment',
-      type: 'experiment',
-      description: 'Use this to A/B/n test this route towards different pages',
     },
     {
       title: 'Include in sitemap',
@@ -88,12 +79,36 @@ export default {
       name: 'disallowRobots',
       type: 'boolean',
       fieldset: 'visibility'
-    }
-    */
+    },
+    /*
+    // This can be used by a server-side rendered website. We plan to figure out proper JAMstack support
+    {
+      name: 'queries',
+      type: 'array',
+      description: 'Used to return personalized content based on paid search terms and remarketing',
+      of: [
+        {
+          type: 'string'
+        }
+      ],
+      options: {
+        layout: 'tags'
+      }
+    }, */
+    {
+      name: 'campaign',
+      type: 'string',
+      title: 'Campaign',
+      description: 'UTM for campaings'
+    },
+    /*
+    // This can be used by a server-side rendered website. We plan to figure out proper JAMstack support
+    {
+      name: 'experiment',
+      type: 'experiment',
+      description: 'Use this to A/B/n test this route towards different pages',
+    }, */
   ],
-  initialValue: {
-    useSiteTitle: false,
-  },
   preview: {
     select: {
       title: 'slug.current',

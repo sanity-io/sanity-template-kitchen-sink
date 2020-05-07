@@ -4,20 +4,23 @@ export default {
   title: 'Page',
   fields: [
     {
-      type: 'string',
       name: 'title',
+      type: 'string',
+      title: 'Title',
     },
     {
-      title: 'Navigation menu',
       name: 'navMenu',
       type: 'reference',
-      weak: false,
+      title: 'Navigation menu',
+      // weak: true, // Uncomment if you want to be able to delete navigation even though pages refer to it
       to: [{ type: 'navigationMenu' }],
       description: 'Which nav menu should be shown, if any',
     },
     {
       name: 'content',
       type: 'array',
+      title: 'Page sections',
+      description: 'Add, edit, and reorder sections',
       of: [
         { type: 'pricing' },
         { type: 'uiComponentRef' },
