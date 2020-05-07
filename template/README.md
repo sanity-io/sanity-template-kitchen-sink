@@ -19,8 +19,8 @@ Concepts covered in this starter are:
 - Custom embedded objects in rich text for Instagram posts, social media videos, LaTeX math etc.
 - [Field validations](https://www.sanity.io/docs/validation)
 - Custom [slugify functions with promises](https://www.sanity.io/docs/slug-type#custom-slugify-function-e1531d9d041b)
+- Examples of how to use plugins and custom input components
 - Examples of custom document and document type lists using [structure builder](https://www.sanity.io/docs/overview-structure-builder)
-- Example of [Google Optimize](https://optimize.google.com/optimize/home/) A/B-test facility
 - Custom workflow using [Document Actions API]('https://www.sanity.io/docs/custom-workflows)
 - Custom asset sources for Unsplash and AI-generated person photos
 - …and more

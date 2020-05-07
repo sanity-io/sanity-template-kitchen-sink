@@ -79,6 +79,8 @@ export default {
       type: 'boolean',
       fieldset: 'visibility'
     },
+    /*
+    // This can be used by a server-side rendered website. We plan to figure out proper JAMstack support
     {
       name: 'queries',
       type: 'array',
@@ -91,19 +93,20 @@ export default {
       options: {
         layout: 'tags'
       }
-    },
+    }, */
     {
       name: 'campaign',
       type: 'string',
       title: 'Campaign',
       description: 'UTM for campaings'
     },
-
+    /*
+    // This can be used by a server-side rendered website. We plan to figure out proper JAMstack support
     {
       name: 'experiment',
       type: 'experiment',
       description: 'Use this to A/B/n test this route towards different pages',
-    },
+    }, */
   ],
   preview: {
     select: {
