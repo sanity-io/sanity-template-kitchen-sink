@@ -1,14 +1,13 @@
 {
   "version": 0,
   "title": "Kitchen Sink",
-  "description": "A collection of examples from Sanity.io product demo.",
+  "description": "Our ever-evolving feature-rich demonstration studio.",
   "previewMedia": {
     "type": "image",
     "src": "assets/frontend.png",
     "alt": "A screenshot of the example Gatsby frontend"
   },
-  "technologies": [
-    {
+  "technologies": [{
       "id": "gatsby",
       "name": "Gatsby",
       "url": "https://www.gatsbyjs.org/"
@@ -19,8 +18,7 @@
       "url": "https://www.netlify.com/"
     }
   ],
-  "deployments": [
-    {
+  "deployments": [{
       "id": "studio",
       "type": "studio",
       "title": "Sanity Studio",
@@ -44,15 +42,13 @@
     {
       "id": "web",
       "type": "web",
-      "title": "Blog Website",
+      "title": "Marketing Website",
       "description": "A simple frontend showcasing page building and a blog.",
       "dir": "./web",
-      "requiredTokens": [
-        {
-          "role": "deploy-studio",
-          "label": "GraphQL API Deployer"
-        }
-      ],
+      "requiredTokens": [{
+        "role": "deploy-studio",
+        "label": "GraphQL API Deployer"
+      }],
       "provider": {
         "name": "netlify",
         "config": {
@@ -67,12 +63,10 @@
         "src": "assets/frontend.png",
         "alt": "A preview image of the frontend"
       },
-      "requiredCorsOrigins": [
-        {
-          "origin": "http://localhost:8000",
-          "allowCredentials": false
-        }
-      ]
+      "requiredCorsOrigins": [{
+        "origin": "http://localhost:8000",
+        "allowCredentials": false
+      }]
     }
   ]
 }
