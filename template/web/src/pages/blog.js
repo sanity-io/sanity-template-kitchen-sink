@@ -59,14 +59,14 @@ const IndexPage = (props) => {
     : [];
 
   if (!site) {
-    throw new Error(
+    console.warn(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     );
   }
 
   return (
     <Layout textWhite={false}>
-      <SEO title={site.title} description={site.description} keywords={site.keywords} />
+      <SEO title={site.title || 'Missing title'} description={site.description || 'Missing description'} keywords={site.keywords || []} />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         <div className="py-6">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
