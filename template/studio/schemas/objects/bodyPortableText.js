@@ -15,10 +15,9 @@ export default {
     {
       type: 'block',
       title: 'Block',
-      // Styles let you set what your user can mark up blocks with. These
-      // corresponds with HTML tags, but you can set any title or value
-      // you want and decide how you want to deal with it where you want to
-      // use your content.
+      // Styles set the various mark up that the user can use to format content blocks. These
+      // correspond to HTML tags, but you can set a custom title and/or value
+      // and decide how it will be formatted or displayed where your content is used.
       styles: [
         { title: 'Normal', value: 'normal' },
         { title: 'H1', value: 'h1' },
