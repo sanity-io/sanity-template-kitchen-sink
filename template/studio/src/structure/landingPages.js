@@ -1,7 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
-import PreviewIFrame from '../../src/components/previewIFrame'
-
 import { MdMenu } from 'react-icons/lib/md'
+import { GoBrowser as PageIcon } from 'react-icons/lib/go'
 
 export default S.listItem()
   .title('Page Builder')
@@ -17,24 +16,16 @@ export default S.listItem()
         S.listItem()
           .title('Routes')
           .schemaType('route')
-          .child(
-            S.documentTypeList('route')
-              .title('Routes')
-              .child((documentId) =>
-                S.document()
-                  .documentId(documentId)
-                  .schemaType('route')
-                  .views([S.view.form(), PreviewIFrame()])
-              )
-          ),
+          .child(S.documentTypeList('route').title('Routes')),
         S.listItem()
           .title('Pages')
+          .icon(PageIcon)
           .schemaType('page')
           .child(
             S.documentList('page')
               .title('Pages')
               .menuItems(S.documentTypeList('page').getMenuItems())
               .filter('_type == "page" && _id != "frontpage"')
-          ),
+          )
       ])
   )

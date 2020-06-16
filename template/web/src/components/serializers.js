@@ -1,5 +1,4 @@
 import React from "react";
-import Figure from "./Figure";
 import MainImage from "./MainImage";
 import ReactPlayer from "react-player";
 import InstagramEmbed from "react-instagram-embed";
@@ -21,7 +20,7 @@ const serializers = {
       if (!node.url) return null;
       return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
     },
-    math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
+    latex: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.body} />,
   },
 };
 

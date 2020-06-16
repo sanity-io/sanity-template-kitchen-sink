@@ -5,17 +5,15 @@ import {
   GoEye as ReviewIcon,
   GoCircleSlash as RejectedIcon,
   GoArchive as AllIcon,
-  GoPerson as AuthorIcon,
+  GoPerson as AuthorIcon
 } from 'react-icons/lib/go'
-
-import PreviewIFrame from '../../src/components/previewIFrame'
 
 export const icons = {
   BlogIcon,
   ApprovedIcon,
   ReviewIcon,
   RejectedIcon,
-  AllIcon,
+  AllIcon
 }
 
 const blog = S.listItem()
@@ -35,14 +33,10 @@ const blog = S.listItem()
               .menuItems(S.documentTypeList('post').getMenuItems())
               // Only show posts with publish date earlier than now and that is not drafts
               .filter('_type == "post" && publishedAt < now() && !(_id in path("drafts.**"))')
-              .child((documentId) =>
-                S.document()
-                  .documentId(documentId)
-                  .schemaType('post')
-                  .views([S.view.form(), PreviewIFrame()])
-              )
           ),
-        S.documentTypeListItem('post').title('All posts').icon(AllIcon),
+        S.documentTypeListItem('post')
+          .title('All posts')
+          .icon(AllIcon),
         S.listItem()
           .title('Posts by category')
           .child(
@@ -55,14 +49,14 @@ const blog = S.listItem()
                 S.documentList()
                   .schemaType('post')
                   .title('Posts')
-                  .filter(
-                    '_type == "post" && $catId in categories[]._ref'
-                  )
+                  .filter('_type == "post" && $catId in categories[]._ref')
                   .params({ catId })
               )
-        ),
+          ),
         S.divider(),
-        S.documentTypeListItem('author').title('Authors').icon(AuthorIcon),
+        S.documentTypeListItem('author')
+          .title('Authors')
+          .icon(AuthorIcon),
         S.documentTypeListItem('category').title('Categories')
       ])
   )

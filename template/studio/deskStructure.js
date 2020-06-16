@@ -1,14 +1,21 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdMenu } from 'react-icons/lib/md'
-import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/lib/go'
+import { GoHome, GoSettings } from 'react-icons/lib/go'
 import blog from './src/structure/blog'
 import landingPages from './src/structure/landingPages'
 import PreviewIFrame from './src/components/previewIFrame'
 
-const hiddenDocTypes = (listItem) =>
+const hiddenDocTypes = listItem =>
   !['route', 'navigationMenu', 'post', 'page', 'siteSettings', 'author', 'category'].includes(
     listItem.getId()
   )
+
+export const getDefaultDocumentNode = ({ schemaType }) => {
+  // Conditionally return a different configuration based on the schema type
+  const docTypesWithPreview = ['post', 'route']
+  if (docTypesWithPreview.includes(schemaType)) {
+    return S.document().views([S.view.form(), PreviewIFrame()])
+  }
+}
 
 export default () =>
   S.list()
@@ -19,6 +26,9 @@ export default () =>
         .title('Site settings')
         .icon(GoSettings)
         .child(
+          // getDefaultDocumentNode way of specifying preview split pane won't
+          // work here, because we are manually configuring the document node
+          // with a predefined documentId
           S.document()
             .schemaType('siteSettings')
             .documentId('siteSettings')
@@ -29,6 +39,9 @@ export default () =>
         .schemaType('page')
         .icon(GoHome)
         .child(
+          // getDefaultDocumentNode way of specifying preview split pane won't
+          // work here, because we are manually configuring the document node
+          // with a predefined documentId
           S.document()
             .schemaType('page')
             .documentId('frontpage')
@@ -39,5 +52,5 @@ export default () =>
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
-      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])
