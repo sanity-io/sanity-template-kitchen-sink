@@ -24,7 +24,8 @@
     "@sanity/color-input",
     "mux-input",
     "google-analytics",
-    "@sanity/production-preview"
+    "@sanity/production-preview",
+    "@sanity/studio-hints"
   ],
   "parts": [{
       "name": "part:@sanity/base/schema",
@@ -41,6 +42,10 @@
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
       "path": "./resolvePreviewUrl.js"
+    },
+    {
+      "implements": "part:@sanity/default-layout/studio-hints-config",
+      "path": "./studioHintsConfig.js"
     }
   ]
 }
