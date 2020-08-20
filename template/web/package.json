@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-kitchen-sink-web",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
@@ -38,7 +38,7 @@
     "tailwindcss": "^1.1.4"
   },
   "dependencies": {
-    "@sanity/client": "^0.147.3",
+    "@sanity/client": "^1.150.1",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-google-analytics": "^2.1.34",
     "gatsby-plugin-sharp": "^2.4.4",
