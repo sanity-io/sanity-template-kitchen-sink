@@ -1,4 +1,4 @@
-import {MdList} from 'react-icons/lib/md'
+import {MdList} from "react-icons/md"
 
 export default {
   name: 'featureList',

@@ -1,5 +1,5 @@
-import MdVideocam from 'react-icons/lib/md/videocam'
-import MdPhotoCamera from 'react-icons/lib/md/photo-camera'
+import { MdVideocam } from "react-icons/md";
+import { MdPhotoCamera } from "react-icons/md";
 import InstagramPreview from '../components/preview/Instagram'
 import EmbedPlayer from '../components/preview/EmbedPlayer'
 
