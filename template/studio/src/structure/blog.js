@@ -6,7 +6,7 @@ import {
   GoCircleSlash as RejectedIcon,
   GoArchive as AllIcon,
   GoPerson as AuthorIcon,
-} from 'react-icons/lib/go'
+} from "react-icons/go"
 
 import PreviewIFrame from '../../src/components/previewIFrame'
 

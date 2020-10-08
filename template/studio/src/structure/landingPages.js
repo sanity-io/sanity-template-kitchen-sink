@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 import PreviewIFrame from '../../src/components/previewIFrame'
 
-import { MdMenu } from 'react-icons/lib/md'
+import { MdMenu } from "react-icons/md"
 
 export default S.listItem()
   .title('Page Builder')
