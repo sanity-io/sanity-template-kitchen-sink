@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-kitchen-sink-studio",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
