@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdMenu } from 'react-icons/lib/md'
-import { GoBrowser as PageIcon } from 'react-icons/lib/go'
+import { MdMenu } from "react-icons/md"
+import { GoBrowser as PageIcon } from "react-icons/go"
 
 export default S.listItem()
   .title('Page Builder')

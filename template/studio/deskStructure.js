@@ -1,19 +1,31 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { GoHome, GoSettings } from 'react-icons/lib/go'
+import { GoHome, GoSettings } from 'react-icons/go'
 import blog from './src/structure/blog'
 import landingPages from './src/structure/landingPages'
-import PreviewIFrame from './src/components/previewIFrame'
+import IframePreview from './src/components/IframePreview'
+import MobileIframePreview from './src/components/MobileIframePreview'
 
 const hiddenDocTypes = listItem =>
   !['route', 'navigationMenu', 'post', 'page', 'siteSettings', 'author', 'category'].includes(
     listItem.getId()
   )
 
+const previewURL = 'http://localhost:8000'
 export const getDefaultDocumentNode = ({ schemaType }) => {
   // Conditionally return a different configuration based on the schema type
   const docTypesWithPreview = ['post', 'route']
   if (docTypesWithPreview.includes(schemaType)) {
-    return S.document().views([S.view.form(), PreviewIFrame()])
+    return S.document().views([
+      S.view.form(),
+      S.view
+        .component(IframePreview)
+        .title('Web')
+        .options({ previewURL }),
+      S.view
+        .component(MobileIframePreview)
+        .title('Mobile')
+        .options({ previewURL })
+    ])
   }
 }
 
@@ -32,7 +44,7 @@ export default () =>
           S.document()
             .schemaType('siteSettings')
             .documentId('siteSettings')
-            .views([S.view.form(), PreviewIFrame()])
+          //.views([S.view.form(), PreviewIFrame()])
         ),
       S.documentListItem()
         .title('Frontpage')
@@ -45,7 +57,7 @@ export default () =>
           S.document()
             .schemaType('page')
             .documentId('frontpage')
-            .views([S.view.form(), PreviewIFrame()])
+          //.views([S.view.form(), PreviewIFrame()])
         ),
       blog,
       landingPages,
