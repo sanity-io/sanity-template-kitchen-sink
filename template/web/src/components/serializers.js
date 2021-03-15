@@ -21,8 +21,8 @@ const serializers = {
       if (!node.url) return null;
       return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
     },
-    math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
-  },
+    math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />
+  }
 };
 
 export default serializers;
