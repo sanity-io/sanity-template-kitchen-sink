@@ -3,18 +3,23 @@ import PortableText from "./portableText";
 import clientConfig from "../../client-config";
 import CTALink from "./CTALink";
 
-import { getFluidGatsbyImage } from "gatsby-source-sanity";
+import { getGatsbyImageData } from "gatsby-source-sanity";
+import { GatsbyImage } from "gatsby-plugin-image";
 const maybeImage = illustration => {
   let img = null;
   if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
-    const fluidProps = getFluidGatsbyImage(
-      illustration.image.asset._id,
+    const imageData = getGatsbyImageData(
+      illustration.image,
       { maxWidth: 960 },
       clientConfig.sanity
     );
 
     img = (
-      <img className="w-full md:w-4/5 z-50" src={fluidProps.src} alt={illustration.image.alt} />
+      <GatsbyImage
+        className="w-full md:w-4/5 z-50"
+        image={imageData}
+        alt={illustration.image.alt}
+      />
     );
   }
   return img;
