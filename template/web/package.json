@@ -7,7 +7,7 @@
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
-    "dev": "npm run clean-cache && gatsby develop",
+    "dev": "gatsby develop",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
