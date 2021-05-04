@@ -5,7 +5,7 @@
     "private": false
   },
   "sanity": {
-    "dataset": "master",
+    "dataset": "production",
     "projectId": "rwmuledy",
     "projectTitle": "Kitchen Sink Studio"
   },
@@ -17,20 +17,21 @@
   "userInput": {},
   "deployments": {
     "studio": {
-      "url": "https://sanity-gatsby-blog-studio-rf4qpk9y.netlify.com/",
+      "url": "https://sanity-kitchen-studio.netlify.com",
       "providerName": "netlify",
       "providerInfo": {
-        "buildHookId": "5cc04d5199df1802277a6e91",
-        "siteId": "58275684-e35f-46ee-9fda-a5151927cfb5        "
+        "buildHookId": "5f3ea06cd5973b0101a7a0a0",
+        "siteId": "f64b11cb-9e15-4715-a7fc-891ae4aff598"
       }
     },
     "web": {
-      "url": "https://sanity-gatsby-blog-web-skupqnos.netlify.com/",
+      "url": "https://sanity-template-kitchen-sink-web.netlify.app",
       "providerName": "netlify",
       "providerInfo": {
-        "buildHookId": "5caf2962008b0b042f8df19a",
-        "siteId": "b8bd695c-8c8c-4e22-a34f-a6ee0103d454"
+        "buildHookId": "5f3ea005b1f979de9169dfac",
+        "siteId": "b3bdc365-4bf7-42c4-8e22-0f49466de5a8"
       }
     }
   }
 }
+
