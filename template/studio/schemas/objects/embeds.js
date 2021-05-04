@@ -1,7 +1,6 @@
 import React from 'react'
 import { MdVideocam } from 'react-icons/md'
 import { MdPhotoCamera } from 'react-icons/md'
-import InstagramPreview from '../components/preview/Instagram'
 import EmbedPlayer from '../components/preview/EmbedPlayer'
 import { Tweet } from 'react-twitter-widgets'
 
@@ -17,10 +16,6 @@ export const instagram = {
       description: 'The URL to the post as seen in a desktop browser'
     }
   ],
-  preview: {
-    select: { url: 'url' },
-    component: InstagramPreview
-  }
 }
 
 export const videoEmbed = {

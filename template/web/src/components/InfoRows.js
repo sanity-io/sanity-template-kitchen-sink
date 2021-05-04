@@ -1,8 +1,9 @@
 import React from "react";
 import PortableText from "./portableText";
 
-import { getFluidGatsbyImage } from "gatsby-source-sanity";
+import { getGatsbyImageData } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const maybeImage = illustration => {
   let img = null;
@@ -12,14 +13,18 @@ const maybeImage = illustration => {
     illustration.image &&
     illustration.image.asset
   ) {
-    const fluidProps = getFluidGatsbyImage(
-      illustration.image.asset._id,
+    const imageData = getGatsbyImageData(
+      illustration.image,
       { maxWidth: 960 },
       clientConfig.sanity
     );
 
     img = (
-      <img className="w-full sm:h-64 mx-auto" src={fluidProps.src} alt={illustration.image.alt} />
+      <GatsbyImage
+        className="w-full sm:h-64 mx-auto"
+        image={imageData}
+        alt={illustration.image.alt}
+      />
     );
   }
   return img;

@@ -14,7 +14,7 @@ Want to make a template for Sanity and your favourite front-end framework?
 We’re still maturing [sanity.io/create](https://sanity.io/create) and our APIs,
 but do tell us about it on [slack.sanity.io](https://slack.sanity.io).
 
-![The Sanity and Gatsby powered blog](https://github.com/sanity-io/sanity-template-kitchen-sink/blob/master/assets/frontend.png?raw=true)
+![The Sanity and Gatsby powered blog](https://github.com/sanity-io/sanity-template-kitchen-sink/blob/main/assets/frontend.png?raw=true)
 
 ## Local development
 

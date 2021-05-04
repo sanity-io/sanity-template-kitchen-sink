@@ -5,7 +5,7 @@ import { buildImageObj, cn, getBlogUrl } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import PortableText from "./portableText";
 
-import styles from "./blog-post-preview.module.css";
+import * as styles from "./blog-post-preview.module.css";
 import { responsiveTitle3 } from "./typography.module.css";
 
 function BlogPostPreview(props) {
