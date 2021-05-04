@@ -1,5 +1,3 @@
-import React from 'react'
-
 import {
   mathInlineIcon,
   mathIcon,
@@ -24,11 +22,11 @@ export default {
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
-        { title: 'Quote', value: 'blockquote' }
+        { title: 'Quote', value: 'blockquote' },
       ],
       lists: [
         { title: 'Bullet', value: 'bullet' },
-        { title: 'Number', value: 'number' }
+        { title: 'Number', value: 'number' },
       ],
       // Marks let you mark up inline text in the block editor.
       marks: {
@@ -43,9 +41,9 @@ export default {
             value: 'highlight',
             blockEditor: {
               icon: highlightIcon,
-              render: highlightRender
-            }
-          }
+              render: highlightRender,
+            },
+          },
 
           /*
           {
@@ -68,26 +66,27 @@ export default {
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url'
-              }
-            ]
-          }
-        ]
+                type: 'url',
+              },
+            ],
+          },
+        ],
       },
       of: [
         { type: 'authorReference' },
-        { type: 'math', icon: mathInlineIcon, title: 'Inline math' }
-      ]
+        { type: 'latex', icon: mathInlineIcon, title: 'Inline math' },
+      ],
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
       type: 'mainImage',
-      options: { hotspot: true }
+      options: { hotspot: true },
     },
     { type: 'instagram' },
     { type: 'videoEmbed' },
-    { type: 'math', icon: mathIcon, title: 'Math block' }
-  ]
+    { type: 'tweetEmbed' },
+    { type: 'latex', icon: mathIcon, title: 'Math block' },
+  ],
 }

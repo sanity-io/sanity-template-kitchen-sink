@@ -30,13 +30,14 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "react-instagram-embed": "^1.5.0",
     "react-player": "^1.15.2",
-    "sanity-plugin-asset-source-thispersondoesnotexist": "0.0.1",
+    "react-twitter-widgets": "^1.10.0",
+    "sanity-mobile-preview": "^1.0.7",
     "sanity-plugin-asset-source-unsplash": "^0.1.3",
-    "sanity-plugin-dashboard-widget-document-list": "^0.0.11",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-google-analytics": "^0.2.6",
+    "sanity-plugin-latex-input": "^1.0.1",
     "sanity-plugin-mux-input": "^0.2.1"
   },
   "devDependencies": {

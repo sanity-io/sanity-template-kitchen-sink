@@ -17,16 +17,17 @@
     "dashboard-widget-structure-menu",
     "dashboard-widget-document-list",
     "dashboard-widget-netlify",
-    "asset-source-thispersondoesnotexist",
     "@sanity/vision",
     "asset-source-unsplash",
     "@sanity/code-input",
     "@sanity/color-input",
     "mux-input",
     "google-analytics",
-    "@sanity/production-preview"
+    "@sanity/production-preview",
+    "latex-input"
   ],
-  "parts": [{
+  "parts": [
+    {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
     },

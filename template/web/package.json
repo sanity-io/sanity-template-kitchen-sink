@@ -19,8 +19,8 @@
     "date-fns": "^1.30.1",
     "dotenv": "^8.2.0",
     "gatsby": "^3.0.4",
-    "gatsby-plugin-image": "^1.0.1",
     "gatsby-plugin-google-analytics": "^3.0.0",
+    "gatsby-plugin-image": "^1.0.1",
     "gatsby-plugin-postcss": "^4.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.1",
@@ -33,16 +33,16 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^5.2.1",
-    "react-instagram-embed": "^1.5.0",
     "react-player": "^1.15.2",
+    "react-twitter-widgets": "^1.10.0",
     "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.21.5",
     "prettier-eslint-cli": "^4.7.1"
   }
 }

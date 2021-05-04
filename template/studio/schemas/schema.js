@@ -21,7 +21,7 @@ import * as plugs from './plugs'
 import plugDefaultFields from './plugs/_plugDefaultFields'
 
 // Object types
-import { instagram, videoEmbed } from './objects/embeds'
+import { instagram, videoEmbed, tweetEmbed } from './objects/embeds'
 import cta from './objects/cta'
 import bodyPortableText from './objects/bodyPortableText'
 import excerptPortableText from './objects/excerptPortableText'
@@ -30,7 +30,6 @@ import authorReference from './objects/authorReference'
 import link from './objects/link'
 import variation from './objects/variation'
 import openGraph from './objects/openGraph'
-import latex from './latex'
 
 const allPlugs = Object.values(plugs).map((plug) => {
   return { ...plug, fields: plugDefaultFields.concat(plug.fields) }
@@ -41,7 +40,6 @@ export default createSchema({
   types: schemaTypes // Built-in types
     // Our custom types
     .concat([
-      latex,
       localeString,
       variation,
       openGraph,
@@ -60,6 +58,7 @@ export default createSchema({
       authorReference,
       instagram,
       videoEmbed,
+      tweetEmbed,
       bodyPortableText,
       excerptPortableText,
     ])
