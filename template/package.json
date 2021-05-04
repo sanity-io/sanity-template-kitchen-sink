@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-gatsby-blog",
+  "name": "sanity-kitchen-sink",
   "version": "1.0.4",
   "scripts": {
     "build": "lerna run build --parallel",
