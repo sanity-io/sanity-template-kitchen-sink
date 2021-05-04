@@ -1,18 +1,18 @@
 {
   "repository": {
-    "name": "sanity-gatsby-blog",
+    "name": "sanity-kitchen-sink",
     "owner": "sanity-io",
     "private": false
   },
   "sanity": {
-    "dataset": "blog",
-    "projectId": "jmhf2rn8",
-    "projectTitle": "Gatsby Blog"
+    "dataset": "master",
+    "projectId": "rwmuledy",
+    "projectTitle": "Kitchen Sink Studio"
   },
   "user": {
-    "profileImage": "https://lh3.googleusercontent.com/-a67P3TV8b5g/AAAAAAAAAAI/AAAAAAAAADI/LGBX1ZAjh88/photo.jpg",
-    "displayName": "Marius Lundgård",
-    "email": "marius@sanity.io"
+    "profileImage": "https://lh3.googleusercontent.com/a-/AOh14GhJCeBX3cTHXh01wgVDHIp91NbnD5Ob0r9CZYCt",
+    "displayName": "Rune Botten",
+    "email": "rune@sanity.io"
   },
   "userInput": {},
   "deployments": {
@@ -21,7 +21,7 @@
       "providerName": "netlify",
       "providerInfo": {
         "buildHookId": "5cc04d5199df1802277a6e91",
-        "siteId": "b3b7bb87-000f-42a3-9ed3-83358be97dde"
+        "siteId": "58275684-e35f-46ee-9fda-a5151927cfb5        "
       }
     },
     "web": {
@@ -29,7 +29,7 @@
       "providerName": "netlify",
       "providerInfo": {
         "buildHookId": "5caf2962008b0b042f8df19a",
-        "siteId": "7e740745-2e2e-4427-be81-aded75334337"
+        "siteId": "b8bd695c-8c8c-4e22-a34f-a6ee0103d454"
       }
     }
   }

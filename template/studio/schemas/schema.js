@@ -21,7 +21,7 @@ import * as plugs from './plugs'
 import plugDefaultFields from './plugs/_plugDefaultFields'
 
 // Object types
-import { instagram, videoEmbed } from './objects/embeds'
+import { instagram, videoEmbed, tweetEmbed } from './objects/embeds'
 import cta from './objects/cta'
 import bodyPortableText from './objects/bodyPortableText'
 import excerptPortableText from './objects/excerptPortableText'
@@ -58,6 +58,7 @@ export default createSchema({
       authorReference,
       instagram,
       videoEmbed,
+      tweetEmbed,
       bodyPortableText,
       excerptPortableText,
     ])

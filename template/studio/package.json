@@ -31,6 +31,7 @@
     "react-icons": "^3.11.0",
     "react-instagram-embed": "^1.5.0",
     "react-player": "^1.15.2",
+    "react-twitter-widgets": "^1.10.0",
     "sanity-mobile-preview": "^1.0.7",
     "sanity-plugin-asset-source-thispersondoesnotexist": "0.0.1",
     "sanity-plugin-asset-source-unsplash": "^0.1.3",
