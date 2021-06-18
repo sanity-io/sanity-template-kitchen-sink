@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-kitchen-sink-studio",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
@@ -37,7 +37,7 @@
     "sanity-plugin-dashboard-widget-document-list": "^0.0.11",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-google-analytics": "^0.2.6",
-    "sanity-plugin-mux-input": "^0.2.1"
+    "sanity-plugin-mux-input": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
