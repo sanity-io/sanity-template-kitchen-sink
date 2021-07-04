@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-kitchen-sink-web",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
