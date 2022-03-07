@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-kitchen-sink-web",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
@@ -13,9 +13,9 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
-    "@sanity/block-content-to-react": "^2.0.7",
-    "@sanity/client": "^2.1.0",
-    "@sanity/image-url": "^0.140.19",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^3.0.0",
+    "@sanity/image-url": "^1.0.0",
     "date-fns": "^1.30.1",
     "dotenv": "^8.2.0",
     "gatsby": "^3.0.4",
