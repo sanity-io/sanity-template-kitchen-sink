@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-kitchen-sink-studio",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
@@ -27,8 +27,8 @@
     "@sanity/vision": "^2.1.0",
     "katex": "^0.11.1",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^3.11.0",
     "react-instagram-embed": "^1.5.0",
     "react-player": "^1.15.2",
