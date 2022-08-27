@@ -1,6 +1,6 @@
 # Use the official lightweight Node.js 10 image.
 # https://hub.docker.com/_/node
-FROM node:10
+FROM node:18
 EXPOSE 80
 
 # Create and change to the app directory.
