@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
-    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.1.0",
     "@sanity/image-url": "^0.140.19",
     "date-fns": "^1.30.1",
